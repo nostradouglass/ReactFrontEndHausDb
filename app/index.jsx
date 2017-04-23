@@ -9,10 +9,18 @@ var ImportButtons = require('./components/ImportButtons.jsx');
 class Container extends React.Component{
     render() {
          return (
-            <div> 
-               <TitleLeft /> <BulkRight />
+            <div className="container-fluid">
+                <div className="row"> 
+                    <div className="col-md-6">
+                        <TitleLeft />
+                    </div>
+                    <div className="col-md-6">
+                        <BulkRight />
+                    </div>
+               </div>
                <MainTable />
                <ImportButtons />
+
             </div>
         )
     }

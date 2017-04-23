@@ -5,7 +5,7 @@ var ReactDOM = require('react-dom')
 class TitleLeft extends React.Component {
     render() {
         return (
-            <p>Hello From title Left</p>
+            <h3>MetaDerm Products Database</h3>
         )
     }
 }
