@@ -6,9 +6,9 @@ var MainTable = require('./components/MainTable.jsx');
 var ImportButtons = require('./components/ImportButtons.jsx');
 
 
-var Container = React.createClass({
-    render: function() {
-        return (
+class Container extends React.Component{
+    render() {
+         return (
             <div> 
                <TitleLeft /> <BulkRight />
                <MainTable />
@@ -16,7 +16,7 @@ var Container = React.createClass({
             </div>
         )
     }
-})
+}
 
 
 
