@@ -1,12 +1,21 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var axios = require('axios');
 var TitleLeft = require('./components/TitleLeft.jsx')
 var BulkRight = require('./components/BulkRight.jsx');
 var MainTable = require('./components/MainTable.jsx');
 var ImportButtons = require('./components/ImportButtons.jsx');
 
-
 require('style-loader!css-loader!sass-loader!./styles/app.scss')
+
+var ajaxData = axios.get('https://metaderm.herokuapp.com/products/')
+    .then(function(res) {
+     return res.data
+     
+    })
+    .catch(function(err) {
+        console.log(err)
+    })
 
 class Container extends React.Component{
     render() {
@@ -20,7 +29,7 @@ class Container extends React.Component{
                         <BulkRight />
                     </div>
                </div>
-               <MainTable />
+               <MainTable Products = {ajaxData} />
                <ImportButtons />
 
             </div>

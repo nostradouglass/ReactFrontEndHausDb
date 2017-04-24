@@ -3,34 +3,42 @@ var ReactDOM = require('react-dom')
 var data = require('../tempdata.jsx');
 
 function MainTable(props) {
-    
-    var tempData = data;
-    const listItems = tempData.map((data) => 
-      <tr key={data.asin}> 
-      <td name="productName" className="text-center small"><a href="product/product.asin">{data.productName}</a></td>
-      <td name="size" className="text-center">{data.size}</td>
-      <td name="sku" className="text-center small" >{data.sellerSku}</td>
-      <td name="asin" className="text-center" >{data.asin}</td>
-      <td name="decoratedTubeStock" className="text-center" >{data.decoratedTubeStock}</td>
-      <td name="hausPendingOrder" className="text-center" >{data.hausPendingOrder}</td>
+
+console.log(data)
+
+    props.Products.then(function(data) {
+      
+     })
+  
+
+    const listItems = data.map((product) => 
+      <tr key={product.asin}> 
+      <td name="productName" className="text-center small"><a href="product/product.asin">{product.productName}</a></td>
+      <td name="size" className="text-center">{product.size}</td>
+      <td name="sku" className="text-center small" >{product.sellerSku}</td>
+      <td name="asin" className="text-center" >{product.asin}</td>
+      <td name="decoratedTubeStock" className="text-center" >{product.decoratedTubeStock}</td>
+      <td name="hausPendingOrder" className="text-center" >{product.hausPendingOrder}</td>
       <td name="thirtyDayMoRemainWithIncoming" className="text-center">Temp</td>
-      <td name="hausStock" className="text-center"> {data.hausStock}</td>
-      <td name="fbaStock" className="text-center">{data.fbaStock}</td>
-      <td name="fbaSevenDaySales" className="text-center">{data.fbaSevenDaySales}</td>
-      <td name="fbaThirtyDaySales" className="text-center">{data.fbaThirtyDaySales}</td>
-      <td name="venderStock" className="text-center">{data.venderStock}</td>
-      <td name="vendorSevenDaySales" className="text-center">{data.vendorSevenDaySales}</td>
-      <td name="vendorThirtyDaysSales" className="text-center">{data.vendorThirtyDaySales}</td>
-      <td name="totalStock" className="text-center">{data.totalStock}</td>
-      <td name="totalSevenDaySales" className="text-center">{data.fbaSevenDaySales + data.vendorSevenDaySales}</td>
-      <td name="totalThirtyDaySales" className="text-center">{data.fbaThirtyDaySales + data.vendorThirtyDaySales}</td>
-      <td name="sevenDayMoRemain" className="text-center">{data.sevenDayMoRemain}</td>
-      <td name="thirtyDayMoRemain" className="text-center">{data.thirtyDayMoRemain}</td>
+      <td name="hausStock" className="text-center"> {product.hausStock}</td>
+      <td name="fbaStock" className="text-center">{product.fbaStock}</td>
+      <td name="fbaSevenDaySales" className="text-center">{product.fbaSevenDaySales}</td>
+      <td name="fbaThirtyDaySales" className="text-center">{product.fbaThirtyDaySales}</td>
+      <td name="venderStock" className="text-center">{product.venderStock}</td>
+      <td name="vendorSevenDaySales" className="text-center">{product.vendorSevenDaySales}</td>
+      <td name="vendorThirtyDaysSales" className="text-center">{product.vendorThirtyDaySales}</td>
+      <td name="totalStock" className="text-center">{product.totalStock}</td>
+      <td name="totalSevenDaySales" className="text-center">{product.fbaSevenDaySales + product.vendorSevenDaySales}</td>
+      <td name="totalThirtyDaySales" className="text-center">{product.fbaThirtyDaySales + product.vendorThirtyDaySales}</td>
+      <td name="sevenDayMoRemain" className="text-center">{product.sevenDayMoRemain}</td>
+      <td name="thirtyDayMoRemain" className="text-center">{product.thirtyDayMoRemain}</td>
       <td>
           <button className="btn btn-success btn-sm" >Update</button>
         </td>
       </tr>
     )
+   
+
         return (
            <div>
 <div className="buttonRow">
@@ -79,5 +87,7 @@ function MainTable(props) {
            </ div>    
         )
     }
+
+
 
 module.exports = MainTable;
