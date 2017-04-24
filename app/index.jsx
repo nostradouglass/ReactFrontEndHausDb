@@ -6,6 +6,8 @@ var MainTable = require('./components/MainTable.jsx');
 var ImportButtons = require('./components/ImportButtons.jsx');
 
 
+require('style-loader!css-loader!sass-loader!./styles/app.scss')
+
 class Container extends React.Component{
     render() {
          return (

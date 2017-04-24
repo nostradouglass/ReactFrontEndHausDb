@@ -1,0 +1,171 @@
+
+$hausGreen: #8FC33F;
+
+table a {
+  color: seagreen;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+  background-color: #d5f3d8;
+}
+
+.headerText {
+ font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   font-weight: 300;
+  color: white;
+  padding: 10px;
+}
+
+h2 a, h2 a:hover, h2 a:visited, h2 a:link, h2 a:active {
+  color: white;
+  text-decoration: none;
+}
+
+h2.headerText {
+  margin: 0;
+}
+
+thead tr th {
+  color: #77777A;
+}
+
+.update-btn {
+  padding: 10px;
+  margin: 10px;
+}
+
+.uploadFileBox {
+  padding: 30px;
+  background-color: #D5F3D8;
+}
+
+input[type=number]{
+  width: 70px;
+
+}
+
+.header {
+  width: 100%;
+  height: 200px;
+  background-color: $hausGreen;
+}
+
+.headerRight {
+  color: white;
+  height: 200px;
+  background-color: $hausGreen;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.headerRight input {
+  color:  black;
+}
+
+.headerRight th {
+  color: white;
+}
+
+.container-fluid {
+  padding: 0;
+  min-height: 850px;
+}
+
+.text-center {
+  margin-top: 0;
+}
+
+button a {
+  color: white;
+}
+.bottom {
+  background-color: $hausGreen;
+  min-height: 300px;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.updateButtons {
+  padding-top: 30px;
+}
+
+.updateButtons .btn-default {
+  color: seagreen;
+  font-size: 1.2em;
+  border: 2px solid seagreen
+}
+
+.updatedStockSuccess {
+  width: 100%;
+  background-color: #77777A;
+  color: white;
+
+  animation-name: updateStock;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes updateStock {
+    from {
+      height: 0;
+      opacity: 0%;  
+    }
+    to {
+      height: 40px;
+      opacity: 100%;
+      }
+}
+
+.stockSuccessText {
+ padding: 10px;
+}
+
+.headerLeft .col-md-6 {
+  padding-right: 0px;
+}
+
+.buttonRow {
+  background-color: $hausGreen;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  
+}
+
+#bulkArea {
+  margin-top: 20px;
+}
+
+#bulkTable {
+  width: 400px;
+}
+
+#bulkTable th{
+  text-align: center;
+}
+
+.table>tbody+tbody  {
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+th  {
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+.table>tbody>tr>td {
+   border-top: none !important;
+  border-bottom: none !important;
+  padding: 5px;
+  padding-top: 1px;
+}
+
+.updateBulkButton {
+margin-top: 82px;
+}
+
+
+.bulkTotals {
+  font-size: 1.25em;
+}
