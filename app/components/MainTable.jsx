@@ -1,26 +1,50 @@
 var React = require('react')
 var ReactDOM = require('react-dom')
+var data = require('../tempdata.jsx');
 
-class MainTable extends React.Component {
-    render() {
+function MainTable(props) {
+    
+    var tempData = data;
+    const listItems = tempData.map((data) => 
+      <tr key={data.asin}> 
+      <td name="productName" className="text-center small"><a href="product/product.asin">{data.productName}</a></td>
+      <td name="size" className="text-center">{data.size}</td>
+      <td name="sku" className="text-center small" >{data.sellerSku}</td>
+      <td name="asin" className="text-center" >{data.asin}</td>
+      <td name="decoratedTubeStock" className="text-center" >{data.decoratedTubeStock}</td>
+      <td name="hausPendingOrder" className="text-center" >{data.hausPendingOrder}</td>
+      <td name="thirtyDayMoRemainWithIncoming" className="text-center">Temp</td>
+      <td name="hausStock" className="text-center"> {data.hausStock}</td>
+      <td name="fbaStock" className="text-center">{data.fbaStock}</td>
+      <td name="fbaSevenDaySales" className="text-center">{data.fbaSevenDaySales}</td>
+      <td name="fbaThirtyDaySales" className="text-center">{data.fbaThirtyDaySales}</td>
+      <td name="venderStock" className="text-center">{data.venderStock}</td>
+      <td name="vendorSevenDaySales" className="text-center">{data.vendorSevenDaySales}</td>
+      <td name="vendorThirtyDaysSales" className="text-center">{data.vendorThirtyDaySales}</td>
+      <td name="totalStock" className="text-center">{data.totalStock}</td>
+      <td name="totalSevenDaySales" className="text-center">{data.fbaSevenDaySales + data.vendorSevenDaySales}</td>
+      <td name="totalThirtyDaySales" className="text-center">{data.fbaThirtyDaySales + data.vendorThirtyDaySales}</td>
+      <td name="sevenDayMoRemain" className="text-center">{data.sevenDayMoRemain}</td>
+      <td name="thirtyDayMoRemain" className="text-center">{data.thirtyDayMoRemain}</td>
+      <td>
+          <button className="btn btn-success btn-sm" >Update</button>
+        </td>
+      </tr>
+    )
         return (
            <div>
 <div className="buttonRow">
   <button type="button" className="btn btn-primary btn-sm" >
     <div >Show Decorated Tubes</div>
-    <div >Hide Decorated Tubes</div>
   </button>
   <button type="button" className="btn btn-primary btn-sm" >
     <div >Show Incoming Stock</div>
-    <div >Hide Incoming Stock</div>
   </button>
   <button type="button" className="btn btn-primary btn-sm" >
     <div >Hide SKU</div>
-    <div >Show SKU</div>
   </button>
   <button type="button" className="btn btn-primary btn-sm" >
     <div >Hide ASIN</div>
-    <div >Show ASIN</div>
   </button>
 </div>
 <table className="table table-striped table-bordered">
@@ -30,7 +54,6 @@ class MainTable extends React.Component {
       <th className="text-center">Size</th>
       <th className="text-center" >SKU</th>
       <th className="text-center" >ASIN</th>
-      
       <th className="text-center" >Decorated Tube Stock</th>
       <th className="text-center" >Incoming Stock</th>
       <th className="text-center">30d sales mo rem. w inc.</th>
@@ -50,66 +73,11 @@ class MainTable extends React.Component {
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td name="productName" className="text-center small"><a href="product/product.asin">productName</a></td>
-      <td name="size" className="text-center">size</td>
-      <td name="sku" className="text-center small" >sellerSku</td>
-      <td name="asin" className="text-center" >asin</td>
-      <td name="decoratedTubeStock" className="text-center" >
-        <input  size="5" ></input>
-      </td>
-      <td name="hausPendingOrder" className="text-center" >
-        <input  size="5" ></input>
-      </td>
-      <td name="thirtyDayMoRemainWithIncoming" className="text-center">
-        "thirtyDayMoRemainWithIncoming"</td>
-      <td name="hausStock" className="text-center"> 
-        hausStock
-      </td>
-        <td name="fbaStock" className="text-center">
-          fbaStock
-        </td>
-        <td name="fbaSevenDaySales" className="text-center">
-          fbaSevenDaySales
-        </td>
-        <td name="fbaThirtyDaySales" className="text-center">
-        fbaThirtyDaySales
-        </td>
-        <td name="venderStock" className="text-center">
-          venderStock
-        </td>
-        <td name="vendorSevenDaySales" className="text-center">
-          vendorSevenDaySales
-        </td>
-        <td name="vendorThirtyDaysSales" className="text-center">
-          vendorThirtyDaySales
-        </td>
-        <td name="totalStock" className="text-center">
-          product.totalStock
-        </td>
-        <td name="totalSevenDaySales" className="text-center">
-          "totalSevenDaySales"
-        </td>
-        <td name="totalThirtyDaySales" className="text-center">
-          "totalThirtyDaySales"
-        </td>
-        <td name="sevenDayMoRemain" className="text-center">
-          "sevenDayMoRemain"
-        </td>
-        <td name="thirtyDayMoRemain" className="text-center">
-          "thirtyDayMoRemain"
-        </td>
-        <td>
-          <button className="btn btn-success btn-sm" >Update</button>
-        </td>
-    </tr>
-    
+    {listItems}
   </tbody>
 </table>
            </ div>    
         )
     }
-}
-
 
 module.exports = MainTable;
