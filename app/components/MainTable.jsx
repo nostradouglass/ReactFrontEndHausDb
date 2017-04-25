@@ -4,14 +4,9 @@ var data = require('../tempdata.jsx');
 
 function MainTable(props) {
 
-console.log(data)
+    var data = props.ProductsList
 
-    props.Products.then(function(data) {
-      
-     })
-  
-
-    const listItems = data.map((product) => 
+     var listItems = data.map((product) => 
       <tr key={product.asin}> 
       <td name="productName" className="text-center small"><a href="product/product.asin">{product.productName}</a></td>
       <td name="size" className="text-center">{product.size}</td>

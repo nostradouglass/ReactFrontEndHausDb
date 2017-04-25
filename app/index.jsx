@@ -8,16 +8,30 @@ var ImportButtons = require('./components/ImportButtons.jsx');
 
 require('style-loader!css-loader!sass-loader!./styles/app.scss')
 
-var ajaxData = axios.get('https://metaderm.herokuapp.com/products/')
-    .then(function(res) {
-     return res.data
-     
+
+
+class Container extends React.Component{
+    constructor(props) {
+        super(props);
+        
+        //Set the state ES6
+        this.state = {
+            products: []
+        }
+    }
+
+componentDidMount() {
+    axios.get('https://metaderm.herokuapp.com/products/')
+    .then(res => {
+     const products = res.data
+     this.setState({ products })
     })
     .catch(function(err) {
         console.log(err)
     })
+}
 
-class Container extends React.Component{
+
     render() {
          return (
             <div className="container-fluid">
@@ -29,16 +43,22 @@ class Container extends React.Component{
                         <BulkRight />
                     </div>
                </div>
-               <MainTable Products = {ajaxData} />
+               <MainTable ProductsList = {this.state.products}/>
                <ImportButtons />
 
             </div>
         )
     }
+
 }
+// Set props ES6
+Container.propTypes = {
 
+};
+// Set default Props ES6
+Container.defaultProps = {
 
-
+}
 ReactDOM.render(
     <Container />, document.getElementById('app')
 );
