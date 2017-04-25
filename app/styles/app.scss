@@ -1,5 +1,6 @@
 
 $hausGreen: #8FC33F;
+$MainTextColor: white;
 
 table a {
   color: seagreen;
@@ -12,12 +13,12 @@ table a {
 .headerText {
  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
    font-weight: 300;
-  color: white;
+  color: $MainTextColor;
   padding: 10px;
 }
 
 h2 a, h2 a:hover, h2 a:visited, h2 a:link, h2 a:active {
-  color: white;
+  color: $MainTextColor;
   text-decoration: none;
 }
 
@@ -51,18 +52,18 @@ input[type=number]{
 }
 
 .headerRight {
-  color: white;
+  color: $MainTextColor;
   height: 200px;
   background-color: $hausGreen;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-}
 
-.headerRight input {
-  color:  black;
-}
+  input {
+    color:  black;
+  }
 
-.headerRight th {
-  color: white;
+  th {
+    color: $MainTextColor;
+  }
 }
 
 .container-fluid {
@@ -75,7 +76,7 @@ input[type=number]{
 }
 
 button a {
-  color: white;
+  color: $MainTextColor;
 }
 .bottom {
   background-color: $hausGreen;
@@ -99,7 +100,7 @@ button a {
 .updatedStockSuccess {
   width: 100%;
   background-color: #77777A;
-  color: white;
+  color: $MainTextColor;
 
   animation-name: updateStock;
   animation-duration: 1.5s;
@@ -121,7 +122,7 @@ button a {
  padding: 10px;
 }
 
-.headerLeft .col-md-6 {
+.headerLeft  {
   padding-right: 0px;
 }
 
@@ -138,11 +139,18 @@ button a {
 
 #bulkTable {
   width: 400px;
-}
 
-#bulkTable th{
+  th{
   text-align: center;
 }
+
+  tbody {
+    text-align: center;
+  }
+
+}
+
+
 
 .table>tbody+tbody  {
   border-top: none !important;

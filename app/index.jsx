@@ -36,10 +36,10 @@ componentDidMount() {
          return (
             <div className="container-fluid">
                 <div className="row"> 
-                    <div className="col-md-6">
+                    <div className="col-md-6 headerLeft">
                         <TitleLeft />
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 headerRight">
                         <BulkRight />
                     </div>
                </div>
