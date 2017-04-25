@@ -12,8 +12,8 @@ function MainTable(props) {
       <td name="size" className="text-center">{product.size}</td>
       <td name="sku" className="text-center small" >{product.sellerSku}</td>
       <td name="asin" className="text-center" >{product.asin}</td>
-      <td name="decoratedTubeStock" className="text-center" >{product.decoratedTubeStock}</td>
-      <td name="hausPendingOrder" className="text-center" >{product.hausPendingOrder}</td>
+      <td name="decoratedTubeStock" className="text-center" ><input type="text" size="5" value= {product.decoratedTubeStock} /></td>
+      <td name="hausPendingOrder" className="text-center"> <input type="text" size="5" value={product.hausPendingOrder} /></td>
       <td name="thirtyDayMoRemainWithIncoming" className="text-center">Temp</td>
       <td name="hausStock" className="text-center"> {product.hausStock}</td>
       <td name="fbaStock" className="text-center">{product.fbaStock}</td>
@@ -28,7 +28,7 @@ function MainTable(props) {
       <td name="sevenDayMoRemain" className="text-center">{product.sevenDayMoRemain}</td>
       <td name="thirtyDayMoRemain" className="text-center">{product.thirtyDayMoRemain}</td>
       <td>
-          <button className="btn btn-success btn-sm" >Update</button>
+          <button className="btn btn-success btn-sm" onClick={props.updateNumbersAjax}>Update</button>
         </td>
       </tr>
     )

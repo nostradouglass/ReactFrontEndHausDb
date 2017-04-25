@@ -31,6 +31,10 @@ componentDidMount() {
     })
 }
 
+handleChange() {
+    console.log('Change handler')
+}
+
 
     render() {
          return (
@@ -43,7 +47,7 @@ componentDidMount() {
                         <BulkRight />
                     </div>
                </div>
-               <MainTable ProductsList = {this.state.products}/>
+               <MainTable ProductsList = {this.state.products} updateNumbersAjax = {this.handleChange} />
                <ImportButtons />
 
             </div>
